@@ -2,7 +2,7 @@
 SDL/
 glm/
 glew/
-[Aa]ssets/
+Assets/
 
 
 ## Ignore Visual Studio temporary files, build results, and
