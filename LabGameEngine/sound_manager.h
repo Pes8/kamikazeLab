@@ -36,10 +36,10 @@ private:
     void PreloadAllSound();
     static SoundManager * instance;
     char * soundFiles[6] = {
-        "D:/AudioAsset/Gun+Silencer.wav",
-        "D:/AudioAsset/Industrial-Alarm.wav",
-        "D:/AudioAsset/explosion.wav",
-        "D:/AudioAsset/drumloop.wav"
+        "assets/Audio/Gun+Silencer.wav",
+        "assets/Audio/Industrial-Alarm.wav",
+        "assets/Audio/explosion.wav",
+        "assets/Audio/drumloop.wav"
     };
     
     bool isPlaying;

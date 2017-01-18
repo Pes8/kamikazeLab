@@ -14,7 +14,7 @@
 void preloadAllAssets(){
 
 	// quick hack: change me!
-	std::string assetPath = "D:/Università/UNIVR/Master videogame/Corsi/Game Engine/LabGameEngine/LabGameEngine/assets/";
+	std::string assetPath = "./assets/";
 
 	CpuMesh tmp;
 	tmp.import(assetPath + "dark_fighter_6.obj");
