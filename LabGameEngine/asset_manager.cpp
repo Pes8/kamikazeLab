@@ -14,7 +14,7 @@
 void preloadAllAssets(){
 
 	// quick hack: change me!
-	std::string assetPath = "C:/corsi/game_engines_2016/kamikazeLab2016/assets/";
+	std::string assetPath = "D:/Università/UNIVR/Master videogame/Corsi/Game Engine/LabGameEngine/LabGameEngine/assets/";
 
 	CpuMesh tmp;
 	tmp.import(assetPath + "dark_fighter_6.obj");
@@ -111,9 +111,9 @@ bool CpuMesh::import(const std::string& filename){
 			int i0,i1,i2;
 			int j0,j1,j2;
 			int k0,k1,k2;
-			sscanf( st_i.c_str() , "%d/%d/%d" , &i0,&i1,&i2 );
-			sscanf( st_j.c_str() , "%d/%d/%d" , &j0,&j1,&j2 );
-			sscanf( st_k.c_str() , "%d/%d/%d" , &k0,&k1,&k2 );
+			sscanf_s( st_i.c_str() , "%d/%d/%d" , &i0,&i1,&i2 );
+			sscanf_s( st_j.c_str() , "%d/%d/%d" , &j0,&j1,&j2 );
+			sscanf_s( st_k.c_str() , "%d/%d/%d" , &k0,&k1,&k2 );
 
 			//  Obj indices start from 1 not 0!
 			i0--;j0--;k0--;

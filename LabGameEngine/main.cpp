@@ -15,6 +15,7 @@
 #include <SDL.h>
 #include "custom_classes.h"
 #include "aimind.h"
+#include "sound_manager.h"
 
 using namespace std;
 const int FPS = 30;
@@ -35,6 +36,8 @@ void preloadAllAssets();
 
 #define SDL_TIMEREVENT SDL_USEREVENT
 
+//Managers
+SoundManager soundMng = *SoundManager::GetInstance();
 
 unsigned int pushTimerEvent(unsigned int /*time*/ , void* /*data*/ ){
 	SDL_Event e;
@@ -68,6 +71,8 @@ void callbackTimer(SDL_Event& ){
 	scene.doPhysStep();
 
 	rendering();
+
+    soundMng.Update();
 
 	SDL_GL_SwapWindow( win );
 
@@ -130,6 +135,8 @@ int main(int , char **)
 	scene.initAsNewGame();
 	preloadAllAssets();
 
+    soundMng.Init();
+    soundMng.PlaySound(SoundManager::SOUNDS::ATMOSPHERE);
 	SDL_AddTimer( 1000/FPS, pushTimerEvent, NULL );
 
 	if (N_PLAYERS>0) scene.ships[0].controller.useArrows();
@@ -153,6 +160,8 @@ int main(int , char **)
 		SDL_WaitEvent(&e);
 		processEvent(e);
 	}
+
+    soundMng.Shutdown();
 	SDL_Quit();
 
 	return 0;

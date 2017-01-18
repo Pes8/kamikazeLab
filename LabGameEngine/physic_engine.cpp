@@ -6,6 +6,7 @@
 
 #include <math.h>
 #include "custom_classes.h"
+#include "sound_manager.h"
 
 const float dt = 1.0f/30; // in secs
 
@@ -90,6 +91,8 @@ void Ship::doPhysStep(){
 			if (controller.status[ ShipController::FIRE ]) {
 				spawnNewBullet();
 				timeBeforeFiringAgain += 1 / stats.fireRate ;
+                
+                SoundManager::GetInstance()->PlaySound(SoundManager::SOUNDS::FIRE);
 			}
 		} else timeBeforeFiringAgain -= dt;
 

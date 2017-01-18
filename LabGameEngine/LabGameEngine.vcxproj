@@ -69,8 +69,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)SDL\include;$(SolutionDir)glm;$(SolutionDir)glew\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)SDL\lib\x86;$(SolutionDir)glew\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Università\UNIVR\Master videogame\Corsi\Game Engine\LabGameEngine\Lib\Audio;$(SolutionDir)SDL\include;$(SolutionDir)glm;$(SolutionDir)glew\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Università\UNIVR\Master videogame\Corsi\Game Engine\LabGameEngine\Lib\Audio;$(SolutionDir)SDL\lib\x86;$(SolutionDir)glew\lib\Release\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,7 +80,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;PesAudioWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,6 +123,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="phys_object.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="sound_manager.h" />
     <ClInclude Include="transform.h" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +133,7 @@
     <ClCompile Include="asset_manager.cpp" />
     <ClCompile Include="physic_engine.cpp" />
     <ClCompile Include="rendering_engine.cpp" />
+    <ClCompile Include="sound_manager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,6 +4,7 @@
  */
 
 #include "custom_classes.h"
+#include "sound_manager.h"
 
 Scene scene;
 
@@ -52,6 +53,7 @@ void Ship::reset(){
 
 void Ship::respawn(){
 	reset();
+    SoundManager::GetInstance()->PlaySound(SoundManager::SOUNDS::DANGER);
 }
 
 void Ship::die(){
@@ -61,6 +63,7 @@ void Ship::die(){
 	angVel = glm::angleAxis( (rand()%200+100)/400.0f, randomUnitVec());
 	glm::normalize(angVel);
 	angDrag = 0.0;
+    SoundManager::GetInstance()->PlaySound(SoundManager::SOUNDS::EXPLOSION);
 }
 
 vec3 Scene::randomPosInArena() const{
